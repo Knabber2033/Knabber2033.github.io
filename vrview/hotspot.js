@@ -17,8 +17,8 @@ var vrView;
 // All the scenes for the experience
 var scenes = {
   drausen1: {
-    image: '/pics/drausen1c.jpg',
-    preview: '/pics/drausen1c.jpg',
+    image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+    preview: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
     hotspots: {
       drausen2: {
         pitch: 0,
@@ -29,8 +29,8 @@ var scenes = {
     }
   },
   drausen2: {
-    image: '/pics/drausen2c.jpg',
-    preview: '/pics/drausen2c.jpg',
+    image: '//Knabber2033.github.io/vrview/pics/drausen2c.jpg',
+    preview: '//Knabber2033.github.io/vrview/pics/drausen2c.jpg',
     hotspots: {
       drausen1: {
         pitch: 0,
@@ -44,8 +44,8 @@ var scenes = {
 
 function onLoad() {
   vrView = new VRView.Player('#hotspot', {
-    image: '/pics/drausen1c.jpg',
-    preview: '/pics/drausen1c.jpg',
+    image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+    preview: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
     is_stereo: true,
     is_autopan_off: true
   });

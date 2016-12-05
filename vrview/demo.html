@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>How to use VR View</title>
+	<style> blockquote { padding: 10px; border: thin solid grey; } </style>
+	<script src="vrview-master/build/vrview.min.js"> </script>
+</head>
+<body>
+<u><h2> How to use VR View</u></h2><br><br>
+1.) Take a panorama picture with the Cardboard Camera <br><br>
+<img width="100%" height="100%"  src="pics/drausen1.jpg"><br><br><br>
+2.) Convert the panorama via<a href="https://storage.googleapis.com/cardboard-camera-converter/index.html"> Cardboard Compiler </a><br><br><br>
+<img width="100%" height="100%" src="pics/drausen1c.jpg"><br><br><br>
+3.)<a href=https://github.com/googlevr/vrview>" Download the source Code from Github </a>and import it into the directory you are using <br><br><br> 
+4.) Decide wether to embed the media via iframe or via the VR View script<br><br><br>
+<br>
+<br>
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="4" summary="Layout">
+ <tr>
+  <td width="50%" colspan="1" bgcolor="grey" id="kopf"><h4>IFrame</h4></td>
+  <td width="50%" colspan="2" bgcolor="grey" id="kopf"><h4>VR View Script</h4></td>
+ </tr>
+
+ <tr>
+  <td width="50%">
+  <a>a) Define an IFrame <br><br>
+	<cite>
+	< iframe 
+	width="100%" 
+	height="480px" <br>
+	allowfullscreen 
+	frameborder="0" <br>
+	src="//storage.googleapis.com/vrview/2.0/index.html?image=https://patcat.github.io/vrview/examples/sitepoint.jpg"> <br>< / iframe> </cite></a><br><br><br><br><br><br><br>
+  <u> result:</u><br>
+  <iframe 
+	width="100%" 
+	height="480px" 
+	allowfullscreen 
+	frameborder="0"
+	src="//storage.googleapis.com/vrview/2.0/index.html?image=http://patcat.github.io/vrview/examples/sitepoint.jpg"> </iframe></td>
+  <td width="50%">
+  
+  a) Embed the script in the header <br><br>
+  <a> 
+	<cite>
+		< script src="vrview-master/build/vrview.min.js"> < / script>
+	</cite><br><br>
+	b) Add a placeholder for the VR content<br><br>
+	<cite>
+	< div id="vrview">< / div>
+	
+	</cite><br><br>
+	c) Add the script <br><br>
+	<cite>
+	< script>
+		width: '100%',
+	    height: 480,
+		image: 'vrviewbild.jpg',
+		is_stereo: false,
+	< / script>
+	
+	</cite>
+	</a><br><br>
+	
+	<u>result:</u><br>
+	<div id="vrview"></div>
+
+
+	<script>
+	
+	function onVrViewLoad() {
+	  var vrView = new VRView.Player('#vrview', {
+                width: '100%',
+	        height: 480,
+		image: '/pics/vrviewbild.jpg',
+		is_stereo: false,
+		is_autopan_off: false
+	  });
+	}
+
+	window.addEventListener('load', onVrViewLoad)
+	
+	</script>
+
+  </td>
+ </tr>
+</table>
+
+<br>
+--> same result<br><br><br>
+
+5.) Now its embedded, but what happens if we change the parameters?<br><br><br>
+	a) Use <i>is_stereo= false </i>for an stereoscopic picture <br><br>
+		<div id="vrview1"></div>
+		<script>
+		function onVrViewLoad() {
+		var vrView = new VRView.Player('#vrview1', {
+		width: '100%',
+	    height: 480,
+		image: '/pics/drausen1c.jpg',
+		is_stereo: false,});}
+		window.addEventListener('load', onVrViewLoad)
+		</script><br><br>
+	b) Use <i>is_stereo=true</i> for an monoscopic picture<br><br><br>
+		<div id="vrview2"></div>
+		<script>
+		function onVrViewLoad() {
+		var vrView = new VRView.Player('#vrview2', {
+		width: '100%',
+	    height: 480,
+		image: '/pics/drausen1cm.jpg',
+		is_stereo: true,});}
+		window.addEventListener('load', onVrViewLoad)
+		</script><br><br>
+	c) Using the wrong format of a picture (here unconverted image)<br><br><br>
+		<div id="vrview3"></div>
+		<script>
+		function onVrViewLoad() {
+		var vrView = new VRView.Player('#vrview3', {
+		width: '100%',
+	    height: 480,
+		image: '/pics/drausen1.jpg',
+		is_stereo: false,});}
+		window.addEventListener('load', onVrViewLoad)
+		</script><br><br>
+	d) Shoot a 360° sphere via the Google Camera App <br><br><br>
+	<img width="100%" height="100%"  src="pics/360sphere.jpg"><br><br>
+	embed it via VR View <br><br><br>
+	<div id="sphere"></div>
+		<script>
+		function onVrViewLoad() {
+		var vrView = new VRView.Player('#sphere', {
+		width: '100%',
+	    height: 480,
+		image: '/pics/360sphere.jpg',
+		is_stereo: false,});}
+		window.addEventListener('load', onVrViewLoad)
+		</script><br><br><br>
+	f) Do i see any differences between stereoscopic and monoscopic content?<br><br><br>
+	
+	<table border="0" width="100%" cellspacing="0" cellpadding="4" summary="Layout">
+ <tr>
+  <td width="50%" colspan="1" bgcolor="grey" id="kopf2"><h4>Mono</h2></td>
+  <td width="50%" colspan="2" bgcolor="grey" id="kopf2"><h4>Stereo</h2></td>
+ </tr>
+
+ <tr>
+  <td width="50%">
+  <div id="monozeigen"></div>
+
+
+	<script>
+	
+	function onVrViewLoad() {
+	  var vrView = new VRView.Player('#monozeigen', {
+                width: '100%',
+	        height: 480,
+		image: '/pics/drausen1cm.jpg',
+		is_stereo: false,
+		is_autopan_off: true
+	  });
+	}
+
+	window.addEventListener('load', onVrViewLoad)
+	
+	</script>
+  </td>
+  <td width="50%">
+   <div id="stereozeigen"></div>
+
+
+	<script>
+	
+	function onVrViewLoad() {
+	  var vrView = new VRView.Player('#stereozeigen', {
+                width: '100%',
+	        height: 480,
+		image: '/pics/drausen1c.jpg',
+		is_stereo: true,
+		is_autopan_off: true
+	  });
+	}
+
+	window.addEventListener('load', onVrViewLoad)
+	
+	</script>
+  </td>
+ </tr>
+</table><br><br><br>
+
+
+6.) Define Hotspots and add Hotspotevents (e.g. changing the point of view)<br><br>
+a) Embed the script in the header (see "VR View Script a)" )<br><br>
+b) Add a placeholder for the VR content<br><br>
+<cite><a>< div id="hotspot"> < / div>	</a></cite><br><br>
+c) Add the script <br><br>
+<cite> <a> 	 < script src="hotspot.js"> < / script>	</a></cite><br><br>
+d) Define the "hotspot.js" file<br><br>
+Define where the hotspots are and what scenes you are looking at<br>
+<a><cite>
+var scenes = { <br>
+  drausen1: { <br>
+    image: '/pics/drausen1c.jpg',<br>
+    preview: '/pics/drausen1c.jpg',<br>
+    hotspots: {<br>
+      drausen2: {<br>
+        pitch: 0,<br>
+        yaw: 130,<br>
+        radius: 0.05,<br>
+        distance: 1
+      }
+    }
+  },<br><br>
+  drausen2: {<br>
+    image: '/pics/drausen2c.jpg',<br>
+    preview: '/pics/drausen2c.jpg',<br>
+    hotspots: {<br>
+      drausen1: {<br>
+        pitch: 0,<br>
+        yaw: 135,<br>
+        radius: 0.05,<br>
+        distance: 1
+      }
+    }
+  },
+};
+<br><br>
+
+function onLoad() {<br>
+  vrView = new VRView.Player('#hotspot', {<br>
+    image: '/pics/drausen1c.jpg',<br>
+    preview: '/pics/drausen1c.jpg',<br>
+    is_stereo: true,<br>
+    is_autopan_off: true
+  });
+<br><br>
+  vrView.on('ready', onVRViewReady);<br>
+  vrView.on('modechange', onModeChange);<br>
+  vrView.on('click', onHotspotClick);<br>
+  vrView.on('error', onVRViewError);<br>
+}
+<br><br>
+function onVRViewReady(e) {<br>
+  console.log('onVRViewReady');<br>
+  loadScene('drausen1');
+}
+<br><br>
+function onModeChange(e) {<br>
+  console.log('onModeChange', e.mode);<br>
+}
+<br><br>
+</cite>Define what happens if you click on a hotspot<cite><br>
+function onHotspotClick(e) {<br>
+  console.log('onHotspotClick', e.id);<br>
+  if (e.id) {<br>
+    loadScene(e.id);
+  }
+}
+<br><br>
+function loadScene(id) {<br>
+  console.log('loadScene', id);<br>
+<br><br>
+</cite>Set the image<br><cite>
+  vrView.setContent({<br>
+    image: scenes[id].image,<br>
+    preview: scenes[id].preview,<br>
+    is_stereo: true,<br>
+    is_autopan_off: true<br>
+  });
+<br><br>
+</cite>Add all the hotspots for the scene<br><cite>
+  var newScene = scenes[id];<br>
+  var sceneHotspots = Object.keys(newScene.hotspots);<br>
+  for (var i = 0; i < sceneHotspots.length; i++) {<br>
+    var hotspotKey = sceneHotspots[i];<br>
+    var hotspot = newScene.hotspots[hotspotKey];<br>
+<br><br>
+    vrView.addHotspot(hotspotKey, {<br>
+      pitch: hotspot.pitch,<br>
+      yaw: hotspot.yaw,<br>
+      radius: hotspot.radius,<br>
+      distance: hotspot.distance
+    });
+  }
+}
+<br><br>
+function onVRViewError(e) {<br>
+  console.log('Error! %s', e.message);
+}
+<br><br>
+window.addEventListener('load', onLoad);<br></a></cite><br><br><br>
+
+<u>result:</u>
+
+    <div id="hotspot"></div>
+	 <script src="hotspot.js"></script>	<br><br>
+	 
+	
+</body>
+</html>

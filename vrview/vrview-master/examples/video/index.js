@@ -67,4 +67,4 @@ function onToggleMute() {
   muteButton.classList.toggle('muted');
 }
 
-//window.addEventListener('load', onLoad);
+window.addEventListener('load', onLoad); //braucht man damit das vr view fenster lädt

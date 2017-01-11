@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proseminar web engineering in winter-semester 2016/17 - VR View - virtual reality for everyone</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <header>
+        <h2>Proseminar web engineering in winter-semester 2016/17</h2>
+		<h1>VR View - virtual reality for everyone</h1>
+        <h2 class="author">Lucien Berger</h2>
+		<h3 class="affiliation">
+			adviser: André Langer <br><br>
+			professorship distributed and self-organizing systems<br>
+			Technische Universität Chemnitz<br>
+			Chemnitz, Deutschland
+		</h3>
+    </header>
+    <section>
+    	<h2>1. Introduction</h2>
+        
+			At the beginning humans shared special moments via speech, then pictures where drawn on the inner side of a cave and 1826 the first photography ever was shoot. <a href="#r1">[1]</a>
+			Years later, with the digital revolution of photography and the spreading of the internet, it was possible to simply share personal moments with the whole world. The next big step was the panorama:
+			seeing the whole 360° view, instead of just looking at an section of the image.
+<br>		For Google, the future of photography isn't limited anymore to just looking at pictures, but to get immersed in them. Googles
+			solution for that trend, which is adding immersivity as it feels like standing inside the panorama-scene, is called VR-View. 
+<br>		A Java Script released in spring 2016. It allows the user to easy embed 360° VR media into websites or apps.
+			As VR View works native on IOS (8+) and Android (4.4+) but also as an web-application for nearly every common modern web-browsers, it is compatible with a wide range of devices. <a href="#r2">[2]</a><br>
+			VR View works on different devices in the following web-browsers: 
+			<figure>
+			- Windows: Chrome, Opera, Firefox, IE 11, Edge<br>
+			- Linux:   Chrome, Opera, Firefox<br>
+			- macOS:   Chrome, Opera, Safari, Firefox<br>
+			- IOS:	   Chrome, Safari<br>
+			- Android: Chrome<br><a href="#r2">[2]</a>
+			</figure>
+
+			Nearly everyone can experience
+			virtual reality. Additional hardware isn't needed as
+			VR View functions on PC in an magic window, where the mouse can drag the view around, but for smartphone's it will even translate the movement of the phones motion-sensors natively into the 
+			VR View window. This magic window allows to change into a fullscreen-mode or even a cardboard-mode, for more immersivity. 
+			In cardboard-mode the phone-screen is divided into two parts, which display the same content, as the Cardboard has to provide an image
+			for every eye.
+    	
+	</section>
+    <section>
+    	<h2> 2. The magic behind VR View</h2>
+    	<h3> 2.1. Basics </h3>
+    		
+    	<p>
+        VR View basically projects an equirectangular panorama to a sphere. In the middle of that sphere the user is positioned and a picture or a video is playing all around him. 
+		In order for that, equirectangular projection is used - a type of projection for mapping a sphere to a flat surface, similar to a world map which is transferred on the globe.
+		While the verticals remain vertical, the horizon is a straight line, this results in an distortion in the horizontal area. <a href="#r3">[3]</a> The panorama has to map 360° horizontal and 180° vertically of 
+		the image for the best results. <br>To achieve that, Google recommends using an 2:1 monoscopic picture (with an 4096x2048 resolution) or an 1:1 stereoscopic picture (with an 4096x4096 resolution).
+		While the monoscopic picture is a simple panorama, the stereoscopic picture consists of two vertically stacked pictures. <a href="#r2">[2]</a> The bottom picture is horizontally translated by the interpupillary
+		distance, which leads to an greater disparity of nearby objects.<br> 
+		</p>
+    	<figure>
+          <img src="monostereo.png" alt="the difference between monoscopic and stereoscopic pictures"/>
+          <figcaption>
+            <strong>image 1</strong>: the difference between monoscopic and stereoscopic pictures. <a href="#r2">[2]</a>
+          </figcaption>
+        </figure>
+		<p>
+		VR View processes stereoscopic pictures like anaglyph 3D, as it was used in old 3D movies, which is fusing two images together.
+		Each eye is looking at an slightly different image. This leads to an stereo vision, which is adding an extra depth between fore- and background and results in an more immersive experience. <a href="#r4">[4]</a> 
+		On the downside the user has to use a head-mounted-display (HMD) to experience that additional immersivity, otherwise he won't notice a difference.<br> Also as stereoscopic content is stacked, 
+		the resolution is lower than monoscopic content. For better results for an larger range of devices monoscopic content is better suited, because of the higher resolution.
+		<br>
+		</p>
+    	<figure>
+          <img src="3d.png" alt="difference between both images of a stereoscopic image"/>
+          <figcaption>
+            <strong>image 2</strong>: difference between both images of a stereoscopic image. <a href="#r4">[4]</a>
+          </figcaption>
+        </figure>
+		<p>
+		VR View allows the user to embed pictures shot in the real world or even computer-generated-images (CGI), but it also supports 3 of the most common image formats: png, jpeg and gif. For CGI
+		different plug-in's for Unity, Unreal etc. are available. <a href="#r4">[4]</a> Using CGI over capturing pictures in the real world has the big advantage of not having to worry about camera installations.
+		<br>
+		For VR View the inside-out camera installation principle is used: to shoot the panorama multiple cameras in the middle are mapping every detail around them. <a href="#r5">[5]</a> To fulfill that purpose, several 
+		camera solutions are offered, like camera-rigs which are holders for multiple cameras. Another more mobile and compressed solution are specially for 360° pictures designed cameras. But even
+		any of the latest smartphone's (IOS/Android) can shoot VR View ready pictures via the Google Cardboard app. <a href="#r6">[6]</a> <br> Those pictures can be converted for VR View, with the Cardboard Converter. 
+		This much cheaper solution allows nearly everyone to embed own pictures into their website, but for that you have to accept limitations, like a worse picture quality or stitching problems. 
+		As shooting a panorama with a single phone-camera takes several seconds, you are limited to places with less movement otherwise anomalies like floating body parts may appear.
+		</p>
+		<p>	
+		Google even allows embedding 360° videos into a website via VR View. For that the video has to be an MPEG-4 AVC file or even an adaptive streaming manifest file, like mpd or m3u8.
+		That means, it is possible to stream videos to a website. VR View differences again between monoscopic and stereoscopic content. While stereoscopic videos (with a 2048x2048 resolution)
+		still offer the most immersive experience, monoscopic videos (with a 1920x1080 resolution) are recommend for the best quality. As older devices may have problems with decoding videos 
+		larger than 1080p, monoscopic videos are used for the best compatibility across devices. <a href="#r2">[2]</a>
+		<br>In addition, recording stereoscopic 360° videos is harder, as two video-streams, which must be 
+		panoramic and stereo everywhere, need to be recorded synchronized from different positions. This leads to several camera installation problems, which limit stereoscopic 360° videos to be
+		controlled and static. Otherwise anomalies can show up. <a href="#r7">[7]</a> 
+		<br>Streaming a live video is even more limited, as the stitching need to happen in real time. There are only a few cameras available
+		today who support this, but those cameras are limited to a low resolution. <a href="#r8">[8]</a> 	
+		</p>
+    </section>
+    <section>
+    	<h3>2.2. Demonstrator</h3>
+    	<p>
+		The easiest way to take a 360° panorama for an ordinary human being is to shoot the image via the Google Cardboard Camera app, which is available for IOS and Android. As the phone
+shoots multiple pictures, a stitching process, which takes a few seconds, needs to be done.<br>
+</p>
+    	<figure>
+          <img src="uni1.jpg" alt="a picture shot with the Google Cardboard Camera app"/>
+          <figcaption>
+            <strong>image 3</strong>: a picture shot with the Google Cardboard Camera app. <a href="#r18">[18]</a>
+          </figcaption>
+        </figure>
+		<p>
+
+Because the image is in the wrong format it needs to be converted first, for that,
+Google offers another solution: the Google Cardboard Converter. <a href="#r9">[9]</a> This web-application works only with pictures taken via the Cardboard Camera app. What this application does, is
+simply adding a blurred copy of the image at the upper and lower part of the picture. This algorithm is a compromise, as the added parts are needed, but are as inconspicuous as possible integrated. 
+For an stereoscopic result, the algorithm doubles the monoscopic image - the image is now fully proceeded and ready for VR View.
+<br>
+</p>
+    	<figure>
+          <img src="uni1-converted.jpg" alt="a picture converted with the Google Cardboard Converter"/>
+          <figcaption>
+            <strong>image 4</strong>: a picture converted with the Google Cardboard Converter. <a href="#r18">[18]</a>
+          </figcaption>
+        </figure>
+		<p>When VR View should be embedded into the own website, it is recommend to download the VR View-master folder from Github. <a href="#r10">[10]</a> Inside this folder all the required scripts and examples, for using VR View, are included.
+After cloning those necessary files into the directory, which is used for VR View, all the essential preparation-steps are done.
+<br>If it is wished to host VR View by yourself, there are two options for embedding VR content into the website: either via an IFrame or by including the VR View script. 
+<br><br>An IFrame, or Inline-frame, is an HTML-element, which is used for displaying other web-content as independent documents in a browser. <a href="#r11">[11]</a> This means, the IFrame has to refer to the source 
+of the VR View script and also the chosen image. 
+		<figure>
+        <pre>
+		< iframe width="100%" height="480px" 
+		allowfullscreen frameborder="0" 
+		src="//storage.googleapis.com/vrview/2.0/index.html?image=//
+		Knabber2033.github.io/vrview/pics/drausen1c.jpg&is_stereo=true"> 
+		< / iframe> 
+		</pre>
+		</figure>
+The <i>is_stereo</i> parameter defines if the image should be treated as an monoscopic or as an stereoscopic picture. Assigning the wrong parameters or using wrong formatted images can lead to
+a distorted result.
+<br><br>
+
+The other possibility for including VR content is by including the VR View script.
+<br><br>
+a) Embedding the script into the header of the HTML document. 
+		<figure>
+        <pre>
+		< script src="vrview-master/build/vrview.min.js"> < / script> 
+		</pre>
+		</figure>
+b) Adding and naming the placeholder, which defines where the VR content should be displayed.
+		<figure>
+        <pre>
+		< div id="vrview">< / div> 
+		</pre>
+		</figure>
+c) Defining the parameters of the placeholder. 
+		<figure>
+        <pre>
+	< script>
+	
+	function onVrViewLoad() {
+	  var vrView = new VRView.Player('#vrview', {
+                width: '100%',
+	        height: 480,
+		image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+		is_stereo: true,
+		is_autopan_off: false
+	  });
+	}
+
+	window.addEventListener('load', onVrViewLoad)
+	
+	</ script> 
+		</pre>
+		</figure>
+Adding and naming a placeholder, but defining it in another section has the big advantage of an well-ordered HTML-document, as it is possible to order the content in different sections. 
+Also embedding the same picture twice is now easier, because only another placeholder needs to be added, while it is defined already. 
+Both methods are leading to the same result, the choice depends on personal preferences.
+<br><br>
+VR View even works with 360° sphere-panoramas, which cover not just a part but the full surroundings. The latest versions of the Google Camera app are allowing the user to shoot those 360° spheres.
+Those images don't need to be converted and can be natively embedded into the script. As these spheres don't contain blurred areas, they provide the most immersive experience.  
+<br><br>
+Even hotspot-events, specific areas which react, when clicked, with a defined action, are supported by VR View. They allow web-designers to emulate the user's movement from point to point
+by just clicking on it. While the point of view was changed, another scene was loaded, which pretends, that the user has moved to that clicked place at the image.  
+<br><br>
+a) Embedding the script into the header of the HTML document. 
+<br><br>
+b) Adding and naming the placeholder, which defines where the VR content should be displayed.
+		<figure>
+        <pre>
+		< div id="hotspot"> < / div>	
+		</pre>
+		</figure>
+c) Embedding the script, which defines where the hotspots are placed and what happens if a hotspot-event was triggered.
+		<figure>
+        <pre>
+		< script src="index.js"> < / script>	
+		</pre>
+		</figure>
+d) In the vrview-master/examples/hotspots directory a file named "index.js" is included. This Javascript-file can be modified in order 
+to define which scene should be loaded first and which scene should be loaded when a hotspot is clicked.  
+<br><br>
+<figure>1) Defining which image is loaded for each scene and where the hotspots are positioned.</figure>
+ <figure>
+        <pre>
+		var vrView;
+		var scenes = { 
+		drausen1: { 
+		image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+		preview: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+		hotspots: {
+		drausen2: {
+		pitch: 0,
+		yaw: 130,
+		radius: 0.05,
+		distance: 1 } } },
+
+		drausen2: {
+		image: '//Knabber2033.github.io/vrview/pics/drausen2c.jpg',
+		preview: '//Knabber2033.github.io/vrview/pics/drausen2c.jpg',
+		hotspots: {
+		drausen1: {
+		pitch: 0,
+		yaw: 135,
+		radius: 0.05,
+		distance: 1 } } }, }; </pre>
+</figure><figure>2) Defining which scene should be displayed first. </figure>
+<figure><pre>
+		function onLoad() {
+		vrView = new VRView.Player('#hotspot', {
+		image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+		preview: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
+		is_stereo: true,
+		is_autopan_off: true }); 
+
+		vrView.on('ready', onVRViewReady);
+		vrView.on('modechange', onModeChange);
+		vrView.on('click', onHotspotClick);
+		vrView.on('error', onVRViewError);
+		} 
+
+		function onVRViewReady(e) {
+		console.log('onVRViewReady');
+		loadScene('drausen1'); } 
+
+		function onModeChange(e) {
+		console.log('onModeChange', e.mode);
+		} 
+</pre> </figure> 
+<figure>3) Defining an hotspot-event, for clicking on an hotspot - here loading another scene.</figure><figure><pre>
+		function onHotspotClick(e) {
+		console.log('onHotspotClick', e.id);
+		if (e.id) {
+		loadScene(e.id); } } 
+
+		function loadScene(id) {
+		console.log('loadScene', id);
+	</pre></figure>
+	
+	<figure>4) Setting the image.	</figure>
+	<figure>
+    <pre>  
+		vrView.setContent({
+		image: scenes[id].image,
+		preview: scenes[id].preview,
+		is_stereo: true,
+		is_autopan_off: true
+		}); 
+	</pre>
+	</figure>
+	<figure>5) Embedding the defined hotspots into the scene.	</figure>
+	<figure>
+    <pre>
+		var newScene = scenes[id];
+		var sceneHotspots = Object.keys(newScene.hotspots);
+		for (var i = 0; i < sceneHotspots.length; i++) {
+		var hotspotKey = sceneHotspots[i];
+		var hotspot = newScene.hotspots[hotspotKey];
+
+
+		vrView.addHotspot(hotspotKey, {
+		pitch: hotspot.pitch,
+		yaw: hotspot.yaw,
+		radius: hotspot.radius,
+		distance: hotspot.distance }); } } 
+
+		function onVRViewError(e) {
+		console.log('Error! %s', e.message); } 
+
+		window.addEventListener('load', onLoad);
+	</pre>
+	</figure><br>		
+While the shooting of 360° videos is hard, the integration with VR View is much easier.	<br><br>	
+		
+a) First, for displaying the content, a placeholder for the video needs to be embedded into the HTML-file.
+		<figure>
+        <pre>
+			< div id="vrview">< / div>
+		</pre>
+		</figure>
+
+b) The VR View script needs to be embedded, in order to display the content.
+		<figure>
+        <pre>
+			< script src="//knabber2033.github.io/vrview/
+			vrview-master/build/vrview.js">
+			< / script>	
+		</pre>
+		</figure>
+c) Adding the play-and-pause- and volume-controls at the bottom of the VR View window.
+		<figure>
+        <pre>
+			< div id="controls">
+			< div id="toggleplay" class="paused">< / div>
+			< div id="togglemute">< / div>
+			< / div>
+		</pre>
+		</figure>
+d) Embedding the Javascript, which defines which video should be played and what happens if 
+	the buttons on the control-bar are clicked.
+		<figure>
+        <pre>
+			< script src="index.js">< / script>
+		</pre>
+		</figure>
+e) In the vrview-master/examples/video directory a Javascript-file named "index.js" is included.<br>
+	This file can be modified:<br><br>
+<figure>1) Defining what video should be loaded with which parameters. The <i>default_heading</i> defines in which direction the camera should look first.</figure>
+ <figure>
+        <pre>
+			var vrView;
+			var playButton;
+			var muteButton;
+
+			function onLoad() {
+			vrView = new VRView.Player('#vrview', {
+			width: '100%',
+			height: 480,
+			video: 'congo_2048.mp4',
+			is_stereo: true,
+			default_heading: 90,});
+		</pre>
+</figure>
+
+<figure>2) Adding the play- and mute-controls.</figure>
+<figure><pre>
+		vrView.on('ready', onVRViewReady);
+		playButton = document.querySelector('#toggleplay');
+		muteButton = document.querySelector('#togglemute');
+		playButton.addEventListener('click', onTogglePlay);
+		muteButton.addEventListener('click', onToggleMute);}
+</pre> </figure> 
+<figure>3) Setting the initial state of VR View - here VR View plays the video after it is loaded.<br>
+		Defining the function of the play- and mute-button.</figure><figure><pre>
+		Defining the function of the play- and mute-button.
+		function onVRViewReady() {
+		console.log('vrView.isPaused', vrView.isPaused);
+		if (vrView.isPaused) {
+		playButton.classList.add('paused');
+		} else {
+		playButton.classList.remove('paused');}}
+
+		function onTogglePlay() {
+		if (vrView.isPaused) {
+		vrView.play();
+		playButton.classList.remove('paused');
+		} else {
+		vrView.pause();
+		playButton.classList.add('paused');}}
+
+		function onToggleMute() {
+		var isMuted = muteButton.classList.contains('muted');
+		if (isMuted) {
+			vrView.setVolume(1);
+		} else {
+			vrView.setVolume(0);}
+		muteButton.classList.toggle('muted');}	
+	</pre></figure>
+	<figure>4) Loading the VR View window when the site is loaded.</figure>
+	<figure>
+    <pre>  
+		window.addEventListener('load', onLoad);
+	</pre>
+	</figure>
+    </section>
+    <section>
+    	<h2>3. Devices made for VR View</h2>
+    	<p>
+		At the Google I/O 2014 the Cardboard was first presented - a type of holster where the phone is inserted in. The phone works like a head-mounted-display where the content is displayed on.
+		Two lenses inside the cardboard and the, in the half separated, phone-display are delivering an image for each eye. <a href="#r12">[12]</a> Stereoscopic content becomes more immersive as the phone translates the head movement 
+		natively into the VR View window. <br>
+		The Cardboard is built around the fact, that the phone delivers all the required technology for virtual reality. Motion-sensor, high-resolution-screen, camera etc. - the phone is the 
+		most expensive device, but almost everyone has already buyed one. <a href="#r13">[13]</a> Unlike other VR-Headsets, extra cables or a room aren't needed, because the purpose of the Cardboard is another one. It is virtual reality
+		on the go - mobile, easy accessible and, with costs of down to 5€ for no-name devices, cheap. That's why it is attractive to many users, which leads to an wide user base (12 million cardboards sold in 2016) and even upgraded 
+		versions of the cardboard, like the Google Daydream. <a href="#r14">[14]</a> As this makes it appealing for developers and as VR View takes away the hurdle of developing a VR app from the ground up, many VR apps where released. <a href="#r15">[15]</a>
+    	</p>
+	</section>
+    <section>
+    	<h2>4. Summary - for what is VR View useful?</h2>
+    	<p>
+		VR View is a Google script, which allows every web-developer to easily embed 360° content into their websites.<br> 
+		As VR View is a client side display solution, the developer chose's the hosting and distribution strategy. <a href="#r2">[2]</a>
+		The developer isn't limited to a single platform like Facebook's 360° content solution, which works only on Facebook. <a href="#r16">[16]</a>
+		On the downside, for the implementation of VR View basic HTML knowledge is needed, it's not just a simple "drag and drop"-principle. 
+		For less technology-affine users, Google allows to view 360° files on the phones Google-images-app. It is even possible to share those panoramas,
+		without having to worry about all the additional features available for VR View.
+		<br>On the other hand, VR View offers more options to choose from, like stereoscopic content and hotspots. But VR View is still limited to the most common file-formats.
+		As an compensation Google offers own solutions for capturing and converting images for VR View.
+		<br>VR View supports a wider range of devices, either it is in a web-browser or a phone - on every platform the experience is similar. While VR View on PC happens in a magic window,
+		the phones translates movement native. A wide range of possible users is guaranteed, as additional hardware isn't needed.
+		Basically everyone with a common device and internet-access can experience virtual reality, there is no need for an high-end
+		pc, an extra room or an HDM. <br>
+		But, as it is developed to work on many devices it is also limited to the weakest device. That is why it is limited to displaying pre-rendered content. 
+		VR View isn't made for resource hungry rendering of complex scenes, it is made for parents who want to share their experiences from their vacations. <a href="#r13">[13]</a> It is made 
+		for the schoolteacher who wants to take virtual history trips to the first cave paintings in France. 
+		Even the real estate market can profit of VR View, as it is possible to show potential customers a glimpse of a planned building. <a href="#r17">[17]</a> 
+		<br>VR View - it is made for sharing moments.
+    </p>
+    </section>
+	<section class="references">
+	<h2>5. Sources</h2>
+	<p class="reference" id="r1">[1] Wikipedia (2017, january 10). Fotografie [online]. Available:<a href="https://de.wikipedia.org/wiki/Fotografie">https://de.wikipedia.org/wiki/Fotografie</a> (10.1.2017)</p> 
+	<p class="reference" id="r2">[2] Google VR (2016, december 7). Embedding VR view [online]. Available:<a href="https://developers.google.com/vr/concepts/vrview">https://developers.google.com/vr/concepts/vrview</a> (10.1.2017)</p>
+	<p class="reference" id="r3">[3] Wikipedia (2008, july 8). Equirectangular Projection [online]. Available:<a href="http://wiki.panotools.org/Equirectangular_Projection">http://wiki.panotools.org/Equirectangular_Projection</a> (10.1.2017)</p>
+	<p class="reference" id="r4">[4] Google Inc. Rendering Omni-directional Stereo Content [online]. Available:<a href="https://developers.google.com/vr/jump/rendering-ods-content.pdf">https://developers.google.com/vr/jump/rendering-ods-content.pdf</a> (10.1.2017)</p>
+	<p class="reference" id="r5">[5] Google Developers (2016, may 20). Enhancing Applications and Websites with Embeddable VR Views - Google I/O 2016 [online]. Available:<a href="https://www.youtube.com/watch?v=3rjG_1OdEpY&list=PLOU2XLYxmsILe6_eGvDN3GyiodoV3qNSC&index=118">https://www.youtube.com/watch?v=3rjG_1OdEpY&list=PLOU2XLYxmsILe6_eGvDN3GyiodoV3qNSC&index=118</a> (10.1.2017)</p>
+	<p class="reference" id="r6">[6] Google Inc. (2016, december 7). Cardboard Camera [online]. Available:<a href="https://play.google.com/store/apps/details?id=com.google.vr.cyclops&hl=de">https://play.google.com/store/apps/details?id=com.google.vr.cyclops&hl=de</a> (10.1.2017)</p>
+	<p class="reference" id="r7">[7] Matt Rowell (2015, september 2). Stereo vs Mono 360° Video for VR [online]. Available:<a href="http://360labs.net/blog/stereo-vs-mono-360-video-vr">http://360labs.net/blog/stereo-vs-mono-360-video-vr</a> (10.1.2017)</p>
+	<p class="reference" id="r8">[8] Brendan Klinkenberg (2016, february 2). YouTube Developing Live 360-Degree Video Capability [online]. Available:<a href="https://www.buzzfeed.com/brendanklinkenberg/youtube-developing-live-360-degree-video-capability?utm_term=.qd7kDVx9M#.pyN6J14jn">https://www.buzzfeed.com/brendanklinkenberg/youtube-developing-live-360-degree-video-capability?utm_term=.qd7kDVx9M#.pyN6J14jn</a> (10.1.2017)</p>
+	<p class="reference" id="r9">[9] Google. Cardboard Camera Converter [online]. Available:<a href="https://storage.googleapis.com/cardboard-camera-converter/index.html">https://storage.googleapis.com/cardboard-camera-converter/index.html</a> (10.1.2017)</p>
+	<p class="reference" id="r10">[10] borismus (2016, december 21). Github VR View [online]. Available:<a href="https://github.com/googlevr/vrview">https://github.com/googlevr/vrview</a> (10.1.2017)</p>
+	<p class="reference" id="r11">[11] Wikipedia (2015, september 4). Inlineframe [online]. Available:<a href="https://de.wikipedia.org/wiki/Inlineframe">https://de.wikipedia.org/wiki/Inlineframe</a> (10.1.2017)</p>
+	<p class="reference" id="r12">[12] Yuval Boger (2016, april 30). VR and AR in 12 variations [online]. Available:<a href="http://vrguy.blogspot.de/2016/04/vr-and-ar-in-12-variations.html">http://vrguy.blogspot.de/2016/04/vr-and-ar-in-12-variations.html</a> (10.1.2017)</p>
+	<p class="reference" id="r13">[13] David Pierce (2016, april 14). Inside Google’s Plan to Make VR Amazing for Absolutely, Positively Everyone [online]. Available:<a href="https://www.wired.com/2016/04/google-vr-clay-bavor/">https://www.wired.com/2016/04/google-vr-clay-bavor/</a> (10.1.2017)</p>
+	<p class="reference" id="r14">[14] Brian Ussery (2016, october 26). Google’s virtual game changer: Leveraging 360 VR video & image optimization for SEO [online]. Available:<a href="http://searchengineland.com/googles-virtual-game-changer-leveraging-360-vr-video-image-optimization-seo-261777">http://searchengineland.com/googles-virtual-game-changer-leveraging-360-vr-video-image-optimization-seo-261777</a> (10.1.2017)</p>
+	<p class="reference" id="r15">[15] Lucas Matney (2016, march 30). Google tackles simple 360 content embeds with VR View, introduces Cardboard SDK for iOS [online]. Available<a href="https://techcrunch.com/2016/03/30/google-tackles-simple-360-content-embeds-with-vr-view-introduces-cardboard-sdk-for-ios/">https://techcrunch.com/2016/03/30/google-tackles-simple-360-content-embeds-with-vr-view-introduces-cardboard-sdk-for-ios/</a> (10.1.2017)</p>
+	<p class="reference" id="r16">[16] Facebook 360. Facebook 360 Photos [online]. Available:<a href="https://facebook360.fb.com/360-photos/">https://facebook360.fb.com/360-photos/</a> (10.1.2017)</p>
+	<p class="reference" id="r17">[17] Bernd Kling (2016, march 31). Google VR View ermöglicht 360-Grad-Ansichten in Apps und Websites [online]. Available:<a href="http://www.zdnet.de/88264905/google-vr-view-ermoeglicht-360-grad-ansichten-in-apps-und-websites/">http://www.zdnet.de/88264905/google-vr-view-ermoeglicht-360-grad-ansichten-in-apps-und-websites/</a> (10.1.2017)</p>
+	<p class="reference" id="r18">[18] own shot pictures</p>
+	</section>
+</body>
+</html>

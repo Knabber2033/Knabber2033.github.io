@@ -24,25 +24,25 @@
     	<h2>1. Introduction</h2>
         
 			At the beginning humans shared special moments via speech, then pictures where drawn on the inner side of a cave, and 1826 the first photography ever was shoot. <a href="#r1">[1]</a>
-			Years later, with the digital revolution of fotography and the spreading of the internet, it was possible to simply share personal moments with the whole world. The next big step was the panorama:
+			Years later, with the digital revolution of photography and the spreading of the internet, it was possible to simply share personal moments with the whole world. The next big step was the panorama:
 			seeing the whole 360° view, instead of just looking at a section of the image.
-<br>		For Google, the future of fotography isn't limited anymore to just looking at pictures, but to get immersed in them. Google's
+<br>		For Google, the future of photography isn't limited anymore to just looking at pictures, but to get immersed in them. Google's
 			solution for that trend, which is adding immersivity as it feels like standing inside the panorama-scene, is called VR-View. 
-<br>		A Java Script released in spring 2016. It allows the user to easy embed 360° VR media into websites or apps.
-			As VR View works native on IOS (8+) and Android (4.4+) but also as a webapplication for nearly every common modern webbrowsers, it is compatible with a wide range of devices. <a href="#r2">[2]</a><br>
-			VR View works on different devices in the following webbrowsers: 
+<br>		A JavaScript released in spring 2016. It allows the user to easy embed 360° VR media into websites or apps.
+			As VR View works native on IOS (8+) and Android (4.4+) but also as a web application for nearly every common modern web browsers, it is compatible with a wide range of devices. <a href="#r2">[2]</a><br>
+			VR View works on different devices in the following web browsers: 
 			<figure><pre>
-	^- Windows: Chrome, Opera, Firefox, IE 11, Edge<br>
-	- Linux:   Chrome, Opera, Firefox<br>
-	- macOS:   Chrome, Opera, Safari, Firefox<br>
-	- IOS:	   Chrome, Safari<br>
-	- Android: Chrome<br></pre><a href="#r2">[2]</a>
+- Windows: Chrome, Opera, Firefox, IE 11, Edge<br>
+- Linux:   Chrome, Opera, Firefox<br>
+- macOS:   Chrome, Opera, Safari, Firefox<br>
+- IOS:	   Chrome, Safari<br>
+- Android: Chrome<br></pre><a href="#r2">[2]</a>
 			</figure>
 
 			Nearly everyone can experience
 			virtual reality. Additional hardware isn't needed as
 			VR View functions on PC in a magic window, where the mouse can drag the view around, but for smartphone's it will even translate the movement of the phone's motion sensor natively into the 
-			VR View window. For more immersivity, this magic window allows one to change into a fullscreen-mode or even a Cardboard-mode. 
+			VR View window. For more immersivity, this magic window allows one to change into a full screen-mode or even a Cardboard-mode. 
 			In the Cardboard-mode the phone-screen is divided into two parts, which display the same content, as the Cardboard has to provide an image
 			for every eye.
     	
@@ -82,7 +82,7 @@
 		VR View allows the user to embed not only pictures shot in the real world, but also computer-generated-images (CGI). Furthermore it supports 3 of the most common image formats: png, jpeg and gif. For CGI
 		different plug-ins for Unity, Unreal etc. are available. <a href="#r4">[4]</a> Using CGI over capturing pictures in the real world has the big advantage of not having to worry about camera installations.
 		<br>
-		For VR View the inside-out camera installation principle is used: to shoot the panorama, multiple cameras in the middle are mapping every detail around them. <a href="#r5">[5]</a> To fulfill that purpose, several 
+		For VR View the inside-out camera installation principle is used: to shoot the panorama, multiple cameras in the middle are mapping every detail around them. <a href="#r5">[5]</a> To fulfil that purpose, several 
 		camera solutions are offered, like camera-rigs which are holders for multiple cameras. Other more mobile and compressed solutions are specially for 360° pictures designed cameras. But even
 		any of the latest smartphones (IOS/Android) can shoot VR View ready pictures via the Google Cardboard app. <a href="#r6">[6]</a> <br> Those pictures can be converted for VR View, with the Cardboard Converter. 
 		This much cheaper solution allows nearly everyone to embed own pictures into their websites, but for that one has to accept limitations, like a worse picture quality or stitching problems. 
@@ -91,7 +91,7 @@
 		<p>	
 		Google even allows embedding 360° videos into a website via VR View. For that the video has to be a MPEG-4 AVC file or even an adaptive streaming manifest file, like mpd or m3u8.
 		That means, it is possible to stream videos to a website. VR View differences again between monoscopic and stereoscopic content. While stereoscopic videos (with a 2048x2048 resolution)
-		still offer the most immersive experience, monoscopic videos (with a 1920x1080 resolution) are recommend for the best quality. As older devices may have problems with decoding videos 
+		still offer the most immersive experience, monoscopic videos (with a 1920x1080 resolution) are recommended for the best quality. As older devices may have problems with decoding videos 
 		larger than 1080p, monoscopic videos are used for the best compatibility across devices. <a href="#r2">[2]</a>
 		<br>
 		In addition, recording stereoscopic 360° videos is harder: Those video-streams, which are 
@@ -116,7 +116,7 @@ shoots multiple pictures, a stitching process, which takes a few seconds, needs 
 		<p>
 
 Because the image is in the wrong format, it needs to be converted first. For that,
-Google offers another solution: the Google Cardboard Converter. <a href="#r9">[9]</a> This web-application works only with pictures taken via the Cardboard Camera app. What this application does, is
+Google offers another solution: the Google Cardboard Converter. <a href="#r9">[9]</a> This web application works only with pictures taken via the Cardboard Camera app. What this application does, is
 simply adding a blurred copy of the image at the upper and lower part of the picture. As the added parts are needed, but are integrated as inconspicuously as possible, this algorithm is a compromise.
 For a stereoscopic result, the algorithm doubles the monoscopic image - the image is now fully proceeded and ready for VR View.
 <br>
@@ -127,10 +127,10 @@ For a stereoscopic result, the algorithm doubles the monoscopic image - the imag
             <strong>Image 4</strong>: A picture converted with the Google Cardboard Converter. <a href="#r18">[18]</a>
           </figcaption>
         </figure>
-		<p>When VR View should be embedded into the own website, it is recommend to download the VR View-master folder from Github. <a href="#r10">[10]</a> Inside this folder all the required scripts and examples, for using VR View, are included.
+		<p>When VR View should be embedded into the own website, it is recommend to download the VR View-master folder from GitHub. <a href="#r10">[10]</a> Inside this folder all the required scripts and examples, for using VR View, are included.
 After cloning those necessary files into the directory, which is used for VR View, all the essential preparation-steps are done.
 <br>If it is wished to host VR View by oneself, there are two options for embedding VR content into the website: either via an IFrame or by including the VR View script. 
-<br><br>An IFrame, or Inline-frame, is a HTML-element, which is used for displaying other web-content as independent documents in a browser. <a href="#r11">[11]</a> This means, the IFrame has to refer to the source 
+<br><br>An IFrame, or Inline-frame, is a HTML-element, which is used for displaying other web content as independent documents in a browser. <a href="#r11">[11]</a> This means, the IFrame has to refer to the source 
 of the VR View script as well as the chosen image. 
 		<figure>
 		<iframe src="//pastebin.com/embed_iframe/RGWfuhBa" style="border:none;width:100%"></iframe>
@@ -209,7 +209,7 @@ c) Embedding the script, which defines where the hotspots are placed and what ha
 		< script src="index.js"> < / script>	
 		</pre>-->
 		</figure>
-d) In the vrview-master/examples/hotspots directory a file named "index.js" is included. This Javascript-file can be modified in order 
+d) In the vrview-master/examples/hotspots directory a file named "index.js" is included. This JavaScript-file can be modified in order 
 to define which scene should be loaded first and which scene should be loaded when a hotspot is clicked.  
 <br><br>
 <figure>1) Defining which image is loaded for each scene and where the hotspots are positioned.</figure>
@@ -334,14 +334,14 @@ c) Adding the play-and-pause- and volume-controls at the bottom of the VR View w
 			< / div>
 		</pre>
 		</figure>
-d) Embedding the Javascript, which defines which video should be played and what happens if 
+d) Embedding the JavaScript, which defines which video should be played and what happens if 
 	the buttons on the control-bar are clicked.
 		<figure>
         <pre>
 			< script src="index.js">< / script>
 		</pre>
 		</figure>
-e) In the vrview-master/examples/video directory a Javascript-file named "index.js" is included.<br>
+e) In the vrview-master/examples/video directory a JavaScript-file named "index.js" is included.<br>
 	This file can be modified:<br><br>
 <figure>1) Defining what video should be loaded with which parameters. The <i>default_heading</i> defines in which direction the camera should look first.</figure>
  <figure>
@@ -416,7 +416,7 @@ e) In the vrview-master/examples/video directory a Javascript-file named "index.
     <section>
     	<h2>4. Summary - for what is VR View useful?</h2>
     	<p>
-		VR View is a Google script, which allows every web-developer to easily embed 360° content into his website.<br> 
+		VR View is a Google script, which allows every web developer to easily embed 360° content into his website.<br> 
 		As VR View is a client side display solution, the developer choses the hosting and distribution strategy. <a href="#r2">[2]</a>
 		The developer isn't restricted to a single platform like Facebook's 360° content solution, which works only on Facebook. <a href="#r16">[16]</a>
 		However, on the downside, it is not just a simple "drag and drop"-principle. Therefore basic HTML-knowledge is needed to implement VR View. 
@@ -424,7 +424,7 @@ e) In the vrview-master/examples/video directory a Javascript-file named "index.
 		without having to worry about all the additional features available for VR View.
 		<br>While VR View offers more options to choose from, like stereoscopic content and hotspots, it is still limited to the most common file-formats.
 		As a compensation Google offers own solutions for capturing and converting images for VR View.
-		<br>VR View supports a wider range of devices either it is in a web-browser or a phone - on every platform the experience is similar. While VR View on PC happens in a magic window,
+		<br>VR View supports a wider range of devices either it is in a web browser or a phone - on every platform the experience is similar. While VR View on PC happens in a magic window,
 		the phones translates movement native. A wide range of possible users is guaranteed, as additional hardware isn't needed.
 		Basically everyone with a common device and internet-access can experience virtual reality, there is no need for a high-end
 		pc, an extra room or a HDM. <br>

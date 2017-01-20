@@ -32,11 +32,11 @@
 			As VR View works native on IOS (8+) and Android (4.4+) but also as a webapplication for nearly every common modern webbrowsers, it is compatible with a wide range of devices. <a href="#r2">[2]</a><br>
 			VR View works on different devices in the following webbrowsers: 
 			<figure><pre>
-			- Windows: Chrome, Opera, Firefox, IE 11, Edge<br>
-			- Linux:   Chrome, Opera, Firefox<br>
-			- macOS:   Chrome, Opera, Safari, Firefox<br>
-			- IOS:	   Chrome, Safari<br>
-			- Android: Chrome<br></pre><a href="#r2">[2]</a>
+	^- Windows: Chrome, Opera, Firefox, IE 11, Edge<br>
+	- Linux:   Chrome, Opera, Firefox<br>
+	- macOS:   Chrome, Opera, Safari, Firefox<br>
+	- IOS:	   Chrome, Safari<br>
+	- Android: Chrome<br></pre><a href="#r2">[2]</a>
 			</figure>
 
 			Nearly everyone can experience
@@ -164,7 +164,8 @@ b) Adding and naming the placeholder, which defines where the VR content should 
 		</figure>
 c) Defining the parameters of the placeholder. 
 		<figure>
-        <pre>
+		<script src="//pastebin.com/embed_js/3Ym3K0E5"></script>
+        <!--<pre>
 	< script>
 	
 	function onVrViewLoad() {
@@ -180,7 +181,7 @@ c) Defining the parameters of the placeholder.
 	window.addEventListener('load', onVrViewLoad)
 	
 	</ script> 
-		</pre>
+		</pre>-->
 		</figure>
 Adding and naming a placeholder, but defining it in another section has the big advantage of a well-ordered HTML-document. 
 Also embedding the same picture twice is now easier, because only another placeholder needs to be added, while it is defined already. 
@@ -196,22 +197,25 @@ a) Embedding the script into the header of the HTML document.
 <br><br>
 b) Adding and naming the placeholder, which defines where the VR content should be displayed.
 		<figure>
-        <pre>
+		<script src="//pastebin.com/embed_js/1yeGbRTV"></script>
+        <!--<pre>
 		< div id="hotspot"> < / div>	
-		</pre>
+		</pre>-->
 		</figure>
 c) Embedding the script, which defines where the hotspots are placed and what happens if a hotspot-event was triggered.
 		<figure>
-        <pre>
+		<script src="//pastebin.com/embed_js/1hAYB8YD"></script>
+       <!-- <pre>
 		< script src="index.js"> < / script>	
-		</pre>
+		</pre>-->
 		</figure>
 d) In the vrview-master/examples/hotspots directory a file named "index.js" is included. This Javascript-file can be modified in order 
 to define which scene should be loaded first and which scene should be loaded when a hotspot is clicked.  
 <br><br>
 <figure>1) Defining which image is loaded for each scene and where the hotspots are positioned.</figure>
  <figure>
-        <pre>
+ <script src="//pastebin.com/embed_js/qd7kpZ4H"></script>
+       <!-- <pre>
 		var vrView;
 		var scenes = { 
 		drausen1: { 
@@ -232,9 +236,11 @@ to define which scene should be loaded first and which scene should be loaded wh
 		pitch: 0,
 		yaw: 135,
 		radius: 0.05,
-		distance: 1 } } }, }; </pre>
+		distance: 1 } } }, }; </pre>-->
 </figure><figure>2) Defining which scene should be displayed first. </figure>
-<figure><pre>
+<figure>
+<script src="//pastebin.com/embed_js/PaJKBMD0"></script>
+<!--<pre>
 		function onLoad() {
 		vrView = new VRView.Player('#hotspot', {
 		image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
@@ -255,8 +261,9 @@ to define which scene should be loaded first and which scene should be loaded wh
 		function onModeChange(e) {
 		console.log('onModeChange', e.mode);
 		} 
-</pre> </figure> 
-<figure>3) Defining a hotspot-event, for clicking on a hotspot - here loading another scene.</figure><figure><pre>
+</pre> --></figure> 
+<figure>3) Defining a hotspot-event, for clicking on a hotspot - here loading another scene.</figure><figure>
+<script src="//pastebin.com/embed_js/NZvY5CeG"></script><!--<pre>
 		function onHotspotClick(e) {
 		console.log('onHotspotClick', e.id);
 		if (e.id) {
@@ -264,22 +271,24 @@ to define which scene should be loaded first and which scene should be loaded wh
 
 		function loadScene(id) {
 		console.log('loadScene', id);
-	</pre></figure>
+	</pre>--></figure>
 	
 	<figure>4) Setting the image.	</figure>
 	<figure>
-    <pre>  
+	<script src="//pastebin.com/embed_js/ZH7U43v5"></script>
+   <!-- <pre>  
 		vrView.setContent({
 		image: scenes[id].image,
 		preview: scenes[id].preview,
 		is_stereo: true,
 		is_autopan_off: true
 		}); 
-	</pre>
+	</pre>-->
 	</figure>
 	<figure>5) Embedding the defined hotspots into the scene.	</figure>
 	<figure>
-    <pre>
+    <script src="//pastebin.com/embed_js/M77vUA6A"></script>
+	<!--<pre>
 		var newScene = scenes[id];
 		var sceneHotspots = Object.keys(newScene.hotspots);
 		for (var i = 0; i < sceneHotspots.length; i++) {
@@ -297,13 +306,13 @@ to define which scene should be loaded first and which scene should be loaded wh
 		console.log('Error! %s', e.message); } 
 
 		window.addEventListener('load', onLoad);
-	</pre>
+	</pre>-->
 	</figure><br>		
 While the shooting of 360° videos is hard, the integration with VR View is much easier.	<br><br>	
 		
 a) First, for displaying the content, a placeholder for the video needs to be embedded into the HTML-file.
 		<figure>
-        <pre>
+       <pre>
 			< div id="vrview">< / div>
 		</pre>
 		</figure>

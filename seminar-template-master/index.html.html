@@ -157,7 +157,7 @@ a) Embedding the script into the header of the HTML document.
 b) Adding and naming the placeholder, which defines where the VR content should be displayed.
 		<figure>
 		<pre>
-		&lt;div id="vrview"&gt;&lt;/div&gt; 
+		&lt;div id="vrview"&gt; &lt;/div&gt; 
 		</pre>
 		</figure>
 c) Defining the parameters of the placeholder. 
@@ -279,10 +279,10 @@ to define which scene should be loaded first and which scene should be loaded wh
 	</figure>
 	<figure>5) Embedding the defined hotspots into the scene.	</figure>
 	<figure>
-    <<pre>
+    <pre>
 		var newScene = scenes[id];
 		var sceneHotspots = Object.keys(newScene.hotspots);
-		for (var i = 0; i < sceneHotspots.length; i++) {
+		for (var i = 0; i &lt; sceneHotspots.length; i++) {
 		var hotspotKey = sceneHotspots[i];
 		var hotspot = newScene.hotspots[hotspotKey];
 
@@ -322,7 +322,7 @@ c) Adding the play-and-pause- and volume-controls at the bottom of the VR View w
 			&lt;div id="controls"&gt;
 			&lt;div id="toggleplay" class="paused"&gt; &lt;/div&gt;
 			&lt;div id="togglemute"&gt; &lt;/div&gt;
-			&lt;/ div&gt;
+			&lt;/div&gt;
 		</pre>
 		</figure>
 d) Embedding the JavaScript, which defines which video should be played and what happens if 

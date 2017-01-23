@@ -34,7 +34,7 @@ var scenes = {
     hotspots: {
       drausen1: {
         pitch: 0,
-        yaw: 80,
+        yaw: 90,
         radius: 0.05,
         distance: 1
       }

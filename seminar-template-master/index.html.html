@@ -133,7 +133,6 @@ After cloning those necessary files into the directory, which is used for VR Vie
 <br><br>An IFrame, or Inline-frame, is a HTML-element, which is used for displaying other web content as independent documents in a browser. <a href="#r11">[11]</a> This means, the IFrame has to refer to the source 
 of the VR View script as well as the chosen image. 
 		<figure>
-		<!--<iframe src="//pastebin.com/embed_iframe/RGWfuhBa" style="border:none;width:100%"></iframe>-->
        <pre>
 		&lt;iframe width="100%" height="480px" 
 		allowfullscreen frameborder="0" 
@@ -150,23 +149,21 @@ The other possibility for including VR content is by including the VR View scrip
 <br><br>
 a) Embedding the script into the header of the HTML document. 
 		<figure>
-		<script src="//pastebin.com/embed_js/q1EpYguj"></script><!--
+		
         <pre>
-		 < script src="vrview-master/build/vrview.min.js"> < / script> 
-		</pre>-->
+		&lt;script src="vrview-master/build/vrview.min.js"&gt; &lt;/script&gt; 
+		</pre>
 		</figure>
 b) Adding and naming the placeholder, which defines where the VR content should be displayed.
 		<figure>
-		<script src="//pastebin.com/embed_js/N25A5hgG"></script>
-        <!--<pre>
-		< div id="vrview">< / div> 
-		</pre>-->
+		<pre>
+		&lt;div id="vrview"&gt;&lt;/div&gt; 
+		</pre>
 		</figure>
 c) Defining the parameters of the placeholder. 
 		<figure>
-		<script src="//pastebin.com/embed_js/3Ym3K0E5"></script>
-        <!--<pre>
-	< script>
+		<pre>
+	&lt;script&gt;
 	
 	function onVrViewLoad() {
 	  var vrView = new VRView.Player('#vrview', {
@@ -180,8 +177,8 @@ c) Defining the parameters of the placeholder.
 
 	window.addEventListener('load', onVrViewLoad)
 	
-	</ script> 
-		</pre>-->
+	&lt;/script&gt; 
+		</pre>
 		</figure>
 Adding and naming a placeholder, but defining it in another section has the big advantage of a well-ordered HTML-document. 
 Also embedding the same picture twice is now easier, because only another placeholder needs to be added, while it is defined already. 
@@ -197,25 +194,22 @@ a) Embedding the script into the header of the HTML document.
 <br><br>
 b) Adding and naming the placeholder, which defines where the VR content should be displayed.
 		<figure>
-		<script src="//pastebin.com/embed_js/1yeGbRTV"></script>
-        <!--<pre>
-		< div id="hotspot"> < / div>	
-		</pre>-->
+		<pre>
+		&lt;div id="hotspot"&gt; &lt;/div&gt;	
+		</pre>
 		</figure>
 c) Embedding the script, which defines where the hotspots are placed and what happens if a hotspot-event was triggered.
 		<figure>
-		<script src="//pastebin.com/embed_js/1hAYB8YD"></script>
-       <!-- <pre>
-		< script src="index.js"> < / script>	
-		</pre>-->
+		<pre>
+		&lt;script src="index.js"&gt; &lt;/script&gt;	
+		</pre>
 		</figure>
 d) In the vrview-master/examples/hotspots directory a file named "index.js" is included. This JavaScript-file can be modified in order 
 to define which scene should be loaded first and which scene should be loaded when a hotspot is clicked.  
 <br><br>
 <figure>1) Defining which image is loaded for each scene and where the hotspots are positioned.</figure>
  <figure>
- <script src="//pastebin.com/embed_js/qd7kpZ4H"></script>
-       <!-- <pre>
+ <pre>
 		var vrView;
 		var scenes = { 
 		drausen1: { 
@@ -236,11 +230,10 @@ to define which scene should be loaded first and which scene should be loaded wh
 		pitch: 0,
 		yaw: 135,
 		radius: 0.05,
-		distance: 1 } } }, }; </pre>-->
+		distance: 1 } } }, }; </pre>
 </figure><figure>2) Defining which scene should be displayed first. </figure>
 <figure>
-<script src="//pastebin.com/embed_js/PaJKBMD0"></script>
-<!--<pre>
+<pre>
 		function onLoad() {
 		vrView = new VRView.Player('#hotspot', {
 		image: '//Knabber2033.github.io/vrview/pics/drausen1c.jpg',
@@ -261,9 +254,9 @@ to define which scene should be loaded first and which scene should be loaded wh
 		function onModeChange(e) {
 		console.log('onModeChange', e.mode);
 		} 
-</pre> --></figure> 
+</pre></figure> 
 <figure>3) Defining a hotspot-event, for clicking on a hotspot - here loading another scene.</figure><figure>
-<script src="//pastebin.com/embed_js/NZvY5CeG"></script><!--<pre>
+<pre>
 		function onHotspotClick(e) {
 		console.log('onHotspotClick', e.id);
 		if (e.id) {
@@ -271,24 +264,22 @@ to define which scene should be loaded first and which scene should be loaded wh
 
 		function loadScene(id) {
 		console.log('loadScene', id);
-	</pre>--></figure>
+	</pre></figure>
 	
 	<figure>4) Setting the image.	</figure>
 	<figure>
-	<script src="//pastebin.com/embed_js/ZH7U43v5"></script>
-   <!-- <pre>  
+	<pre>  
 		vrView.setContent({
 		image: scenes[id].image,
 		preview: scenes[id].preview,
 		is_stereo: true,
 		is_autopan_off: true
 		}); 
-	</pre>-->
+	</pre>
 	</figure>
 	<figure>5) Embedding the defined hotspots into the scene.	</figure>
 	<figure>
-    <script src="//pastebin.com/embed_js/M77vUA6A"></script>
-	<!--<pre>
+    <<pre>
 		var newScene = scenes[id];
 		var sceneHotspots = Object.keys(newScene.hotspots);
 		for (var i = 0; i < sceneHotspots.length; i++) {
@@ -306,39 +297,39 @@ to define which scene should be loaded first and which scene should be loaded wh
 		console.log('Error! %s', e.message); } 
 
 		window.addEventListener('load', onLoad);
-	</pre>-->
+	</pre>
 	</figure><br>		
 While the shooting of 360° videos is hard, the integration with VR View is much easier.	<br><br>	
 		
 a) First, for displaying the content, a placeholder for the video needs to be embedded into the HTML-file.
 		<figure>
        <pre>
-			< div id="vrview">< / div>
+				&lt;div id="vrview"&gt; &lt;/div&gt;
 		</pre>
 		</figure>
 
 b) The VR View script needs to be embedded, in order to display the content.
 		<figure>
         <pre>
-			< script src="//knabber2033.github.io/vrview/
-			vrview-master/build/vrview.js">
-			< / script>	
+			&lt;script src="//knabber2033.github.io/vrview/
+			vrview-master/build/vrview.js"&gt;
+			&lt;/script&gt;	
 		</pre>
 		</figure>
 c) Adding the play-and-pause- and volume-controls at the bottom of the VR View window.
 		<figure>
         <pre>
-			< div id="controls">
-			< div id="toggleplay" class="paused">< / div>
-			< div id="togglemute">< / div>
-			< / div>
+			&lt;div id="controls"&gt;
+			&lt;div id="toggleplay" class="paused"&gt; &lt;/div&gt;
+			&lt;div id="togglemute"&gt; &lt;/div&gt;
+			&lt;/ div&gt;
 		</pre>
 		</figure>
 d) Embedding the JavaScript, which defines which video should be played and what happens if 
 	the buttons on the control-bar are clicked.
 		<figure>
         <pre>
-			< script src="index.js">< / script>
+			&lt;script src="index.js"&gt; &lt;/script&gt;
 		</pre>
 		</figure>
 e) In the vrview-master/examples/video directory a JavaScript-file named "index.js" is included.<br>

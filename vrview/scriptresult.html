@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proseminar Web Engineering in Wintersemester 2016/17 - VR View - Virtual Reality for Everyone</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="vrview-master/build/vrview.min.js"> </script>
+</head>
+<body>
+    <header>
+		<h1>VR View - The result of this script</h1>
+    </header>
+    <section>
+	<figure>
+          <img src="//knabber2033.github.io/seminar-template-master/vrview1.gif" alt="The result of this script"/>
+          <figcaption>
+            <strong>Image 5</strong>:<a href="https://knabber2033.github.io/seminar-template-master/vrview2.gif"> The result of this script. </a>
+          </figcaption>
+        </figure>	
+	
+	</section>
+	<section>
+	<script>
+	
+	function onVrViewLoad() {
+	  var vrView = new VRView.Player('#vrview', {
+                width: '100%',
+	        height: 480,
+		image: '//knabber2033.github.io/seminar-template-master/uni1-coverted.jpg',
+		is_stereo: true,
+		is_autopan_off: false
+	  });
+	}
+
+	window.addEventListener('load', onVrViewLoad)
+	
+	</script>
+	</section>
+</body>
+</html>
